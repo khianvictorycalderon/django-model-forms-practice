@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
+from .models import Student
 from .forms import StudentForm
 
-# Create your views here.
 def add_student(request):
     if request.method == "POST":
         form = StudentForm(request.POST)
@@ -15,7 +15,14 @@ def add_student(request):
     return render(
         request,
         'add_student.html',
-        {
-            "form": form
-        }
+        { "form": form }
+    )
+
+def student_list(request):
+    students = Student.objects.all()
+
+    return render(
+        request,
+        'student_list.html',
+        { "students": students }
     )
