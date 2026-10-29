@@ -8,7 +8,7 @@ def add_student(request):
 
         if form.is_valid():
             form.save()
-            return redirect("add_student")
+            return redirect("student_list")
     else:
         form = StudentForm
 
