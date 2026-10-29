@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student List</title>
+    </head>
+    <body>
+
+        <a href="{% url 'add_student' %}">Add Student</a>
+
+        <hr>
+
+        {% for student in students %}
+            <p>
+                ID: {{ student.id }}<br>
+                Name: {{ student.name }}<br>
+                Age: {{ student.age  }}<br>
+                Email: {{ student.email }}
+            </p>
+        {% empty %}
+            <p>No students found.</p>
+        {% endfor %}
+        
+    </body>
+</html>
