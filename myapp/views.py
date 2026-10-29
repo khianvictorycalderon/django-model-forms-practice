@@ -10,7 +10,7 @@ def add_student(request):
             form.save()
             return redirect("student_list")
     else:
-        form = StudentForm
+        form = StudentForm()
 
     return render(
         request,
